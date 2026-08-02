@@ -25,26 +25,10 @@
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            const btn = form.querySelector('button');
-            const icon = btn.querySelector('i');
-            const label = document.createElement('span');
-            label.className = 'button-label';
-            btn.appendChild(label);
-            label.textContent = ' Enviando...';
-            icon.className = 'fas fa-spinner fa-spin';
-            btn.disabled = true;
-
-            setTimeout(() => {
-                label.textContent = ' Mensagem enviada!';
-                icon.className = 'fas fa-check-circle';
-                btn.classList.add('is-sent');
-                form.reset();
-                setTimeout(() => {
-                    label.textContent = ' Enviar mensagem';
-                    btn.classList.remove('is-sent');
-                    btn.disabled = false;
-                }, 2500);
-            }, 1800);
+            const whatsappNumber = '559884030572';
+            const whatsappText = 'ola, vim do site maurotur';
+            const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
         });
 
         // Scroll suave
