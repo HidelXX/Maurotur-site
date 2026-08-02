@@ -26,7 +26,7 @@
         form.addEventListener('submit', function (e) {
             e.preventDefault();
             const whatsappNumber = '559884030572';
-            const whatsappText = 'ola, vim do site maurotur';
+            const whatsappText = 'olá, vim do site maurotur';
             const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
             window.open(waUrl, '_blank', 'noopener,noreferrer');
         });
