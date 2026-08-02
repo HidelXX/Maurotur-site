@@ -10,6 +10,7 @@
             background-color: #fef9f0;  /* areia clara */
             color: #3d3d3d;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         a {
@@ -21,6 +22,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
 
         /* ----- HEADER (azul claro + areia) ----- */
@@ -136,7 +138,7 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
         }
         .hero-content h2 {
-            font-size: 3.2rem;
+            font-size: clamp(1.8rem, 4.2vw, 3.2rem);
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 16px;
@@ -146,7 +148,7 @@
             color: #e67e22; /* laranja do pôr do sol */
         }
         .hero-content p {
-            font-size: 1.25rem;
+            font-size: clamp(1rem, 2.3vw, 1.25rem);
             opacity: 0.9;
             margin-bottom: 32px;
             font-weight: 400;
@@ -167,6 +169,7 @@
             transition: all 0.25s;
             border: none;
             cursor: pointer;
+            text-align: center;
         }
         .btn-primary {
             background: #f59e0b; /* amarelo dourado */
@@ -291,12 +294,15 @@
             color: #3e5566;
             margin-bottom: 12px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 12px;
             font-size: 1.05rem;
+            flex-wrap: wrap;
+            word-break: break-word;
         }
         .contato-info i {
-            width: 30px;
+            width: 24px;
+            flex-shrink: 0;
             color: #4ba3c7;
             font-size: 1.3rem;
         }
@@ -318,6 +324,7 @@
             margin-top: 24px;
             display: flex;
             gap: 18px;
+            flex-wrap: wrap;
         }
         .social-links a {
             background: #4ba3c7;
@@ -486,6 +493,10 @@
             .header-content {
                 flex-wrap: wrap;
             }
+            .hero {
+                min-height: auto;
+                padding: 48px 16px;
+            }
             .nav-links {
                 display: none;
                 flex-direction: column;
@@ -513,10 +524,18 @@
                 border-radius: 32px;
             }
             .hero-content h2 {
-                font-size: 2.2rem;
+                font-size: 2.1rem;
             }
             .hero-content p {
                 font-size: 1rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                max-width: 280px;
             }
             .section-title {
                 font-size: 1.9rem;
@@ -533,9 +552,20 @@
             .horario-banner .redes-mini {
                 margin-left: 0;
             }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         @media (max-width: 480px) {
+            .hero {
+                padding: 40px 12px;
+            }
+            .hero-content {
+                padding: 24px 18px;
+                border-radius: 24px;
+            }
             .hero-content h2 {
                 font-size: 1.8rem;
             }
@@ -545,5 +575,31 @@
             }
             .logo h1 {
                 font-size: 1.5rem;
+            }
+            .section {
+                padding: 50px 0;
+            }
+            .section-title {
+                font-size: 1.7rem;
+            }
+            .section-sub {
+                font-size: 0.95rem;
+            }
+            .rotas-list {
+                flex-direction: column;
+                align-items: center;
+            }
+            .rotas-list span {
+                width: 100%;
+                text-align: center;
+            }
+            .contato-form {
+                padding: 24px 18px;
+            }
+            .contato-info p {
+                font-size: 0.95rem;
+            }
+            .footer-content p {
+                font-size: 0.9rem;
             }
         }
