@@ -10,7 +10,6 @@
             background-color: #fef9f0;  /* areia clara */
             color: #3d3d3d;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         a {
@@ -22,7 +21,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            width: 100%;
         }
 
         /* ----- HEADER (azul claro + areia) ----- */
@@ -138,7 +136,7 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
         }
         .hero-content h2 {
-            font-size: clamp(1.8rem, 4.2vw, 3.2rem);
+            font-size: 3.2rem;
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 16px;
@@ -148,7 +146,7 @@
             color: #e67e22; /* laranja do pôr do sol */
         }
         .hero-content p {
-            font-size: clamp(1rem, 2.3vw, 1.25rem);
+            font-size: 1.25rem;
             opacity: 0.9;
             margin-bottom: 32px;
             font-weight: 400;
@@ -169,7 +167,6 @@
             transition: all 0.25s;
             border: none;
             cursor: pointer;
-            text-align: center;
         }
         .btn-primary {
             background: #f59e0b; /* amarelo dourado */
@@ -213,6 +210,139 @@
             color: #5a6f7e;
             max-width: 650px;
             margin: 0 auto 48px;
+        }
+
+        /* ----- GALERIA ----- */
+        .gallery-section {
+            background: linear-gradient(135deg, #fdf7eb 0%, #f5ede0 100%);
+        }
+
+        .gallery-controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .gallery-btn {
+            border: none;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: #4ba3c7;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .gallery-btn:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        .gallery-viewport {
+            overflow: hidden;
+            padding: 8px 0;
+        }
+
+        .gallery-track {
+            display: flex;
+            gap: 24px;
+            transition: transform 0.7s ease;
+            will-change: transform;
+        }
+
+        .gallery-card {
+            flex: 0 0 320px;
+            max-width: 85vw;
+            background: #fffdf8;
+            padding: 12px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            border: 1px solid #efe3cf;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 16px;
+            display: block;
+            cursor: zoom-in;
+            transition: transform 0.2s ease;
+        }
+
+        .gallery-card img:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-image:focus {
+            outline: 3px solid #e67e22;
+            outline-offset: 4px;
+        }
+
+        .gallery-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(12, 18, 24, 0.92);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 220;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, visibility 0.25s ease;
+        }
+
+        .gallery-modal.is-open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .gallery-modal-content {
+            position: relative;
+            width: min(96vw, 900px);
+            max-height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-modal-content img {
+            width: 100%;
+            max-height: 92vh;
+            object-fit: contain;
+            border-radius: 22px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+            transform: scale(0.95);
+            transition: transform 0.25s ease;
+        }
+
+        .gallery-modal.is-open .gallery-modal-content img {
+            transform: scale(1);
+        }
+
+        .gallery-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            z-index: 230;
+            width: 48px;
+            height: 48px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.95);
+            color: #1e2b3a;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+        }
+
+        .gallery-modal-close:hover {
+            background: #fff;
+            transform: scale(1.03);
         }
 
         /* ----- CARDS (areia + azul) ----- */
@@ -294,15 +424,12 @@
             color: #3e5566;
             margin-bottom: 12px;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 12px;
             font-size: 1.05rem;
-            flex-wrap: wrap;
-            word-break: break-word;
         }
         .contato-info i {
-            width: 24px;
-            flex-shrink: 0;
+            width: 30px;
             color: #4ba3c7;
             font-size: 1.3rem;
         }
@@ -324,7 +451,6 @@
             margin-top: 24px;
             display: flex;
             gap: 18px;
-            flex-wrap: wrap;
         }
         .social-links a {
             background: #4ba3c7;
@@ -493,9 +619,26 @@
             .header-content {
                 flex-wrap: wrap;
             }
-            .hero {
-                min-height: auto;
-                padding: 48px 16px;
+            .gallery-card {
+                flex-basis: 82vw;
+            }
+            .gallery-card img {
+                height: 220px;
+            }
+            .gallery-modal {
+                padding: 12px;
+            }
+            .gallery-modal-content {
+                width: 100%;
+            }
+            .gallery-modal-content img {
+                max-height: 86vh;
+            }
+            .gallery-modal-close {
+                top: 8px;
+                right: 8px;
+                width: 44px;
+                height: 44px;
             }
             .nav-links {
                 display: none;
@@ -524,18 +667,10 @@
                 border-radius: 32px;
             }
             .hero-content h2 {
-                font-size: 2.1rem;
+                font-size: 2.2rem;
             }
             .hero-content p {
                 font-size: 1rem;
-            }
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            .btn {
-                width: 100%;
-                max-width: 280px;
             }
             .section-title {
                 font-size: 1.9rem;
@@ -552,20 +687,9 @@
             .horario-banner .redes-mini {
                 margin-left: 0;
             }
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
         }
 
         @media (max-width: 480px) {
-            .hero {
-                padding: 40px 12px;
-            }
-            .hero-content {
-                padding: 24px 18px;
-                border-radius: 24px;
-            }
             .hero-content h2 {
                 font-size: 1.8rem;
             }
@@ -575,31 +699,5 @@
             }
             .logo h1 {
                 font-size: 1.5rem;
-            }
-            .section {
-                padding: 50px 0;
-            }
-            .section-title {
-                font-size: 1.7rem;
-            }
-            .section-sub {
-                font-size: 0.95rem;
-            }
-            .rotas-list {
-                flex-direction: column;
-                align-items: center;
-            }
-            .rotas-list span {
-                width: 100%;
-                text-align: center;
-            }
-            .contato-form {
-                padding: 24px 18px;
-            }
-            .contato-info p {
-                font-size: 0.95rem;
-            }
-            .footer-content p {
-                font-size: 0.9rem;
             }
         }
