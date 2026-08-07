@@ -46,6 +46,58 @@
         </div>
     </section>
 
+    <!-- ===== GALERIA ===== -->
+    <section class="section gallery-section" id="galeria">
+        <div class="container">
+            <h2 class="section-title">Galeria de <span>imagens</span></h2>
+            <p class="section-sub">As fotos passam devagar e você pode pausar ou avançar quando quiser.</p>
+
+            <div class="gallery-controls">
+                <button class="gallery-btn" id="prevGallery" type="button" aria-label="Imagem anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="gallery-btn" id="toggleGallery" type="button" aria-label="Pausar ou continuar">
+                    <i class="fas fa-pause"></i>
+                </button>
+                <button class="gallery-btn" id="nextGallery" type="button" aria-label="Próxima imagem">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="gallery-viewport">
+                <div class="gallery-track" id="galleryTrack">
+                    <figure class="gallery-card">
+                        <img class="gallery-image" src="imagens-scroll.jpg/WhatsApp Image 2026-08-07 at 07.35.17.jpeg" alt="Paisagem da viagem 1" tabindex="0" role="button" aria-label="Ampliar imagem">
+                    </figure>
+                    <figure class="gallery-card">
+                        <img class="gallery-image" src="imagens-scroll.jpg/WhatsApp Image 2026-08-07 at 07.35.26.jpeg" alt="Paisagem da viagem 2" tabindex="0" role="button" aria-label="Ampliar imagem">
+                    </figure>
+                    <figure class="gallery-card">
+                        <img class="gallery-image" src="imagens-scroll.jpg/WhatsApp Image 2026-08-07 at 07.35.37.jpeg" alt="Paisagem da viagem 3" tabindex="0" role="button" aria-label="Ampliar imagem">
+                    </figure>
+                    <figure class="gallery-card">
+                        <img class="gallery-image" src="imagens-scroll.jpg/WhatsApp Image 2026-08-07 at 07.35.45.jpeg" alt="Paisagem da viagem 4" tabindex="0" role="button" aria-label="Ampliar imagem">
+                    </figure>
+                    <figure class="gallery-card">
+                        <img class="gallery-image" src="imagens-scroll.jpg/WhatsApp Image 2026-08-07 at 07.35.57.jpeg" alt="Paisagem da viagem 5" tabindex="0" role="button" aria-label="Ampliar imagem">
+                    </figure>
+                    <figure class="gallery-card">
+                        <img class="gallery-image" src="imagens-scroll.jpg/WhatsApp Image 2026-08-07 at 07.36.15.jpeg" alt="Paisagem da viagem 6" tabindex="0" role="button" aria-label="Ampliar imagem">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="gallery-modal" id="galleryModal" aria-hidden="true">
+        <button class="gallery-modal-close" id="galleryModalClose" type="button" aria-label="Fechar imagem">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="gallery-modal-content">
+            <img id="galleryModalImage" src="" alt="">
+        </div>
+    </div>
+
     <!-- ===== DIFERENCIAIS ===== -->
     <section class="section" id="diferenciais">
         <div class="container">
