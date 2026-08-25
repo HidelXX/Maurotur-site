@@ -1,703 +1,771 @@
 /* ----- RESET & BASE ----- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fef9f0;  /* areia clara */
-            color: #3d3d3d;
-            line-height: 1.6;
-        }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fef9f0;
+    /* areia clara */
+    color: #3d3d3d;
+    line-height: 1.6;
+}
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-        /* ----- HEADER (azul claro + areia) ----- */
-        header {
-            background: linear-gradient(135deg, #7ec8e3 0%, #4ba3c7 100%);
-            color: #fff;
-            padding: 18px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
-        }
+/* ----- HEADER (azul claro + areia) ----- */
+header {
+    background: linear-gradient(135deg, #7ec8e3 0%, #4ba3c7 100%);
+    color: #fff;
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+}
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
-        .logo h1 {
-            font-size: 1.9rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: #fff;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.10);
-        }
-        .logo h1 span {
-            color: #fcd34d; /* amarelo pôr do sol */
-        }
-        .logo small {
-            display: block;
-            font-size: 0.75rem;
-            font-weight: 300;
-            opacity: 0.9;
-            letter-spacing: 1px;
-            color: #fff6e0;
-        }
+.logo h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+}
 
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            font-weight: 500;
-        }
-        .nav-links a {
-            transition: color 0.2s;
-            font-size: 1rem;
-            color: #fff;
-        }
-        .nav-links a:hover {
-            color: #fcd34d;
-        }
+.logo h1 span {
+    color: #fcd34d;
+    /* amarelo pôr do sol */
+}
 
-        .whatsapp-header {
-            background: #25d366;
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: background 0.2s, transform 0.2s;
-            color: #fff;
-        }
-        .whatsapp-header:hover {
-            background: #1ebe5c;
-            transform: scale(1.02);
-        }
-        .whatsapp-header i {
-            font-size: 1.2rem;
-        }
+.logo small {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 300;
+    opacity: 0.9;
+    letter-spacing: 1px;
+    color: #fff6e0;
+}
 
-        .menu-toggle {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: #fff;
-        }
+.nav-links {
+    display: flex;
+    gap: 28px;
+    font-weight: 500;
+}
 
-        /* ----- HERO (céu + areia + pôr do sol) ----- */
-        .hero {
-            background: linear-gradient(135deg, rgba(126, 200, 227, 0.75) 0%, rgba(251, 191, 36, 0.30) 100%),
-                url('imagem-dunas.jpg/image.png') center/cover no-repeat;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: #1e2b3a;
-            padding: 60px 20px;
-            position: relative;
-        }
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 80px;
-            background: linear-gradient(to top, #fef9f0, transparent);
-        }
-        .hero-content {
-            max-width: 780px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-            background: rgba(255, 253, 245, 0.70);
-            backdrop-filter: blur(4px);
-            padding: 40px 50px;
-            border-radius: 48px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-        }
-        .hero-content h2 {
-            font-size: 3.2rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 16px;
-            color: #1e2b3a;
-        }
-        .hero-content h2 span {
-            color: #e67e22; /* laranja do pôr do sol */
-        }
-        .hero-content p {
-            font-size: 1.25rem;
-            opacity: 0.9;
-            margin-bottom: 32px;
-            font-weight: 400;
-            color: #2c3e50;
-        }
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 14px 40px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.25s;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-primary {
-            background: #f59e0b; /* amarelo dourado */
-            color: #1e2b3a;
-        }
-        .btn-primary:hover {
-            background: #d97706;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(245, 158, 11, 0.35);
-        }
-        .btn-outline {
-            background: rgba(255, 255, 255, 0.25);
-            color: #1e2b3a;
-            border: 2px solid #f59e0b;
-            backdrop-filter: blur(2px);
-        }
-        .btn-outline:hover {
-            background: rgba(245, 158, 11, 0.15);
-            transform: translateY(-3px);
-            border-color: #d97706;
-        }
+.nav-links a {
+    transition: color 0.2s;
+    font-size: 1rem;
+    color: #fff;
+}
 
-        /* ----- SEÇÕES ----- */
-        .section {
-            padding: 70px 0;
-        }
+.nav-links a:hover {
+    color: #fcd34d;
+}
 
-        .section-title {
-            text-align: center;
-            font-size: 2.4rem;
-            font-weight: 700;
-            margin-bottom: 14px;
-            color: #1e2b3a;
-        }
-        .section-title span {
-            color: #e67e22;
-        }
-        .section-sub {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #5a6f7e;
-            max-width: 650px;
-            margin: 0 auto 48px;
-        }
+.whatsapp-header {
+    background: #25d366;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.2s;
+    color: #fff;
+}
 
-        /* ----- GALERIA ----- */
-        .gallery-section {
-            background: linear-gradient(135deg, #fdf7eb 0%, #f5ede0 100%);
-        }
+.whatsapp-header:hover {
+    background: #1ebe5c;
+    transform: scale(1.02);
+}
 
-        .gallery-controls {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 24px;
-        }
+.whatsapp-header i {
+    font-size: 1.2rem;
+}
 
-        .gallery-btn {
-            border: none;
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            background: #4ba3c7;
-            color: #fff;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: transform 0.2s, background 0.2s;
-        }
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #fff;
+}
 
-        .gallery-btn:hover {
-            background: #e67e22;
-            transform: translateY(-2px);
-        }
+/* ----- HERO (céu + areia + pôr do sol) ----- */
+.hero {
+    position: relative;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+}
 
-        .gallery-viewport {
-            overflow: hidden;
-            padding: 8px 0;
-        }
+.hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+}
 
-        .gallery-track {
-            display: flex;
-            gap: 24px;
-            transition: transform 0.7s ease;
-            will-change: transform;
-        }
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
 
-        .gallery-card {
-            flex: 0 0 320px;
-            max-width: 85vw;
-            background: #fffdf8;
-            padding: 12px;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-            border: 1px solid #efe3cf;
-        }
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.48);
+    z-index: -2;
+}
 
-        .gallery-card img {
-            width: 100%;
-            height: 270px;
-            object-fit: cover;
-            border-radius: 16px;
-            display: block;
-            cursor: zoom-in;
-            transition: transform 0.2s ease;
-        }
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
 
-        .gallery-card img:hover {
-            transform: scale(1.02);
-        }
+.hero-content h2 {
+    max-width: 800px;
+}
 
-        .gallery-image:focus {
-            outline: 3px solid #e67e22;
-            outline-offset: 4px;
-        }
+.hero-content p {
+    max-width: 850px;
+}
 
-        .gallery-modal {
-            position: fixed;
-            inset: 0;
-            background: rgba(12, 18, 24, 0.92);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            z-index: 220;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.25s ease, visibility 0.25s ease;
-        }
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
 
-        .gallery-modal.is-open {
-            opacity: 1;
-            visibility: visible;
-        }
+.btn {
+    display: inline-block;
+    padding: 14px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.25s;
+    border: none;
+    cursor: pointer;
+}
 
-        .gallery-modal-content {
-            position: relative;
-            width: min(96vw, 900px);
-            max-height: 92vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.btn-primary {
+    background: #f59e0b;
+    /* amarelo dourado */
+    color: #1e2b3a;
+}
 
-        .gallery-modal-content img {
-            width: 100%;
-            max-height: 92vh;
-            object-fit: contain;
-            border-radius: 22px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-            transform: scale(0.95);
-            transition: transform 0.25s ease;
-        }
+.btn-primary:hover {
+    background: #d97706;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(245, 158, 11, 0.35);
+}
 
-        .gallery-modal.is-open .gallery-modal-content img {
-            transform: scale(1);
-        }
+.btn-outline {
+    background: rgba(255, 255, 255, 0.25);
+    color: #1e2b3a;
+    border: 2px solid #f59e0b;
+    backdrop-filter: blur(2px);
+}
 
-        .gallery-modal-close {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            z-index: 230;
-            width: 48px;
-            height: 48px;
-            border: none;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.95);
-            color: #1e2b3a;
-            font-size: 1.2rem;
-            cursor: pointer;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
-        }
+.btn-outline:hover {
+    background: rgba(245, 158, 11, 0.15);
+    transform: translateY(-3px);
+    border-color: #d97706;
+}
 
-        .gallery-modal-close:hover {
-            background: #fff;
-            transform: scale(1.03);
-        }
+/* ----- SEÇÕES ----- */
+.section {
+    padding: 70px 0;
+}
 
-        /* ----- CARDS (areia + azul) ----- */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-        }
+.section-title {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #1e2b3a;
+}
 
-        .card {
-            background: #fffcf5;
-            padding: 32px 20px;
-            border-radius: 28px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            transition: transform 0.25s, box-shadow 0.25s;
-            border: 1px solid #f0e8d8;
-        }
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
-        }
-        .card i {
-            font-size: 2.8rem;
-            color: #4ba3c7; /* azul claro */
-            margin-bottom: 16px;
-        }
-        .card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: #1e2b3a;
-        }
-        .card p {
-            color: #5a6f7e;
-            font-size: 0.98rem;
-        }
+.section-title span {
+    color: #e67e22;
+}
 
-        /* ----- ROTAS (fundo areia) ----- */
-        .rotas-bg {
-            background: #f5ede0;
-        }
+.section-sub {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #5a6f7e;
+    max-width: 650px;
+    margin: 0 auto 48px;
+}
 
-        .rotas-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px 40px;
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: #1e2b3a;
-            margin-top: 10px;
-        }
-        .rotas-list span {
-            background: #fffcf5;
-            padding: 10px 28px;
-            border-radius: 50px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-            border: 1px solid #e2d6c0;
-        }
-        .rotas-list i {
-            margin-right: 8px;
-            color: #e67e22; /* laranja pôr do sol */
-        }
+/* ----- GALERIA ----- */
+.gallery-section {
+    background: linear-gradient(135deg, #fdf7eb 0%, #f5ede0 100%);
+}
 
-        /* ----- CONTATO ----- */
-        .contato-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-top: 20px;
-        }
+.gallery-controls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
 
-        .contato-info h3 {
-            font-size: 1.6rem;
-            color: #1e2b3a;
-            margin-bottom: 16px;
-        }
-        .contato-info p {
-            color: #3e5566;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.05rem;
-        }
-        .contato-info i {
-            width: 30px;
-            color: #4ba3c7;
-            font-size: 1.3rem;
-        }
-        .icon-blue {
-            color: #4ba3c7;
-        }
-        .icon-yellow {
-            color: #f59e0b;
-        }
-        .service-hours {
-            margin-top: 20px;
-        }
-        .contato-info .phone {
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: #1e2b3a;
-        }
-        .social-links {
-            margin-top: 24px;
-            display: flex;
-            gap: 18px;
-        }
-        .social-links a {
-            background: #4ba3c7;
-            color: #fff;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            transition: background 0.2s, transform 0.2s;
-        }
-        .social-links a i {
-            color: #fff;
-        }
-        .social-links a:hover {
-            background: #e67e22;
-            transform: scale(1.05);
-        }
+.gallery-btn {
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #4ba3c7;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
 
-        .contato-form {
-            background: #fffcf5;
-            padding: 32px 28px;
-            border-radius: 28px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-            border: 1px solid #f0e8d8;
-        }
-        .contato-form h4 {
-            font-size: 1.3rem;
-            margin-bottom: 18px;
-            color: #1e2b3a;
-        }
-        .contato-form input,
-        .contato-form textarea {
-            width: 100%;
-            padding: 14px 18px;
-            border: 1px solid #e2d6c0;
-            border-radius: 16px;
-            font-size: 1rem;
-            margin-bottom: 16px;
-            transition: border 0.2s;
-            background: #fefcf8;
-            font-family: inherit;
-        }
-        .contato-form input:focus,
-        .contato-form textarea:focus {
-            outline: none;
-            border-color: #4ba3c7;
-            box-shadow: 0 0 0 3px rgba(75, 163, 199, 0.15);
-        }
-        .contato-form textarea {
-            height: 110px;
-            resize: vertical;
-        }
-        .contato-form button {
-            background: #f59e0b;
-            color: #1e2b3a;
-            border: none;
-            padding: 14px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            width: 100%;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.2s;
-        }
-        .contato-form button:hover {
-            background: #d97706;
-            transform: scale(1.01);
-        }
-        .contato-form button.is-sent {
-            background: #25d366;
-            color: #fff;
-        }
-        .form-security-note {
-            margin-top: 12px;
-            font-size: 0.85rem;
-            color: #6f8a9a;
-            text-align: center;
-        }
+.gallery-btn:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+}
 
-        /* ----- BANNER DE HORÁRIO (areia) ----- */
-        .horario-banner {
-            background: #fef3e0;
-            border-left: 6px solid #f59e0b;
-            padding: 18px 30px;
-            border-radius: 20px;
-            margin: 30px auto 0;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px 24px;
-            justify-content: center;
-            max-width: 900px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
-        }
-        .horario-banner i {
-            font-size: 1.8rem;
-            color: #e67e22;
-        }
-        .horario-banner p {
-            font-size: 1rem;
-            color: #2d4052;
-            margin: 0;
-        }
-        .horario-banner strong {
-            color: #1e2b3a;
-        }
-        .horario-banner .redes-mini {
-            display: flex;
-            gap: 12px;
-            margin-left: auto;
-        }
-        .horario-banner .redes-mini a {
-            background: #fffcf5;
-            padding: 6px 14px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #1e2b3a;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-            transition: background 0.2s;
-        }
-        .horario-banner .redes-mini a:hover {
-            background: #f5ede0;
-        }
+.gallery-viewport {
+    overflow: hidden;
+    padding: 8px 0;
+}
 
-        /* ----- FOOTER (azul claro) ----- */
-        footer {
-            background: #4ba3c7;
-            color: #fff6e0;
-            padding: 40px 0 28px;
-            margin-top: 20px;
-        }
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-        .footer-content p {
-            margin: 0;
-            font-size: 0.95rem;
-        }
-        .footer-content a {
-            color: #fcd34d;
-        }
-        .footer-content a:hover {
-            text-decoration: underline;
-        }
+.gallery-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.7s ease;
+    will-change: transform;
+}
 
-        /* ----- RESPONSIVO ----- */
-        @media (max-width: 992px) {
-            .contato-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
+.gallery-card {
+    flex: 0 0 320px;
+    max-width: 85vw;
+    background: #fffdf8;
+    padding: 12px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid #efe3cf;
+}
 
-        @media (max-width: 768px) {
-            .header-content {
-                flex-wrap: wrap;
-            }
-            .gallery-card {
-                flex-basis: 82vw;
-            }
-            .gallery-card img {
-                height: 220px;
-            }
-            .gallery-modal {
-                padding: 12px;
-            }
-            .gallery-modal-content {
-                width: 100%;
-            }
-            .gallery-modal-content img {
-                max-height: 86vh;
-            }
-            .gallery-modal-close {
-                top: 8px;
-                right: 8px;
-                width: 44px;
-                height: 44px;
-            }
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background: #4ba3c7;
-                padding: 20px 0;
-                gap: 16px;
-                align-items: center;
-                border-top: 1px solid #7ec8e3;
-                margin-top: 16px;
-            }
-            .nav-links.open {
-                display: flex;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .whatsapp-header {
-                margin-left: auto;
-                margin-right: 12px;
-            }
+.gallery-card img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+}
 
-            .hero-content {
-                padding: 30px 20px;
-                border-radius: 32px;
-            }
-            .hero-content h2 {
-                font-size: 2.2rem;
-            }
-            .hero-content p {
-                font-size: 1rem;
-            }
-            .section-title {
-                font-size: 1.9rem;
-            }
-            .rotas-list span {
-                padding: 6px 18px;
-                font-size: 1rem;
-            }
-            .horario-banner {
-                flex-direction: column;
-                text-align: center;
-                padding: 20px;
-            }
-            .horario-banner .redes-mini {
-                margin-left: 0;
-            }
-        }
+.gallery-card img:hover {
+    transform: scale(1.02);
+}
 
-        @media (max-width: 480px) {
-            .hero-content h2 {
-                font-size: 1.8rem;
-            }
-            .btn {
-                padding: 12px 28px;
-                font-size: 1rem;
-            }
-            .logo h1 {
-                font-size: 1.5rem;
-            }
-        }
+.gallery-image:focus {
+    outline: 3px solid #e67e22;
+    outline-offset: 4px;
+}
+
+.gallery-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 18, 24, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 220;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.gallery-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery-modal-content {
+    position: relative;
+    width: min(96vw, 900px);
+    max-height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-modal-content img {
+    width: 100%;
+    max-height: 92vh;
+    object-fit: contain;
+    border-radius: 22px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    transform: scale(0.95);
+    transition: transform 0.25s ease;
+}
+
+.gallery-modal.is-open .gallery-modal-content img {
+    transform: scale(1);
+}
+
+.gallery-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 230;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    color: #1e2b3a;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.gallery-modal-close:hover {
+    background: #fff;
+    transform: scale(1.03);
+}
+
+/* ----- CARDS (areia + azul) ----- */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #fffcf5;
+    padding: 32px 20px;
+    border-radius: 28px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.25s, box-shadow 0.25s;
+    border: 1px solid #f0e8d8;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+}
+
+.card i {
+    font-size: 2.8rem;
+    color: #4ba3c7;
+    /* azul claro */
+    margin-bottom: 16px;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #1e2b3a;
+}
+
+.card p {
+    color: #5a6f7e;
+    font-size: 0.98rem;
+}
+
+/* ----- ROTAS (fundo areia) ----- */
+.rotas-bg {
+    background: #f5ede0;
+}
+
+.rotas-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 40px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #1e2b3a;
+    margin-top: 10px;
+}
+
+.rotas-list span {
+    background: #fffcf5;
+    padding: 10px 28px;
+    border-radius: 50px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2d6c0;
+}
+
+.rotas-list i {
+    margin-right: 8px;
+    color: #e67e22;
+    /* laranja pôr do sol */
+}
+
+/* ----- CONTATO ----- */
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.contato-info h3 {
+    font-size: 1.6rem;
+    color: #1e2b3a;
+    margin-bottom: 16px;
+}
+
+.contato-info p {
+    color: #3e5566;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.05rem;
+}
+
+.contato-info i {
+    width: 30px;
+    color: #4ba3c7;
+    font-size: 1.3rem;
+}
+
+.icon-blue {
+    color: #4ba3c7;
+}
+
+.icon-yellow {
+    color: #f59e0b;
+}
+
+.service-hours {
+    margin-top: 20px;
+}
+
+.contato-info .phone {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #1e2b3a;
+}
+
+.social-links {
+    margin-top: 24px;
+    display: flex;
+    gap: 18px;
+}
+
+.social-links a {
+    background: #4ba3c7;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.social-links a i {
+    color: #fff;
+}
+
+.social-links a:hover {
+    background: #e67e22;
+    transform: scale(1.05);
+}
+
+.contato-form {
+    background: #fffcf5;
+    padding: 32px 28px;
+    border-radius: 28px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0e8d8;
+}
+
+.contato-form h4 {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+    color: #1e2b3a;
+}
+
+.contato-form input,
+.contato-form textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #e2d6c0;
+    border-radius: 16px;
+    font-size: 1rem;
+    margin-bottom: 16px;
+    transition: border 0.2s;
+    background: #fefcf8;
+    font-family: inherit;
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus {
+    outline: none;
+    border-color: #4ba3c7;
+    box-shadow: 0 0 0 3px rgba(75, 163, 199, 0.15);
+}
+
+.contato-form textarea {
+    height: 110px;
+    resize: vertical;
+}
+
+.contato-form button {
+    background: #f59e0b;
+    color: #1e2b3a;
+    border: none;
+    padding: 14px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.contato-form button:hover {
+    background: #d97706;
+    transform: scale(1.01);
+}
+
+.contato-form button.is-sent {
+    background: #25d366;
+    color: #fff;
+}
+
+.form-security-note {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: #6f8a9a;
+    text-align: center;
+}
+
+/* ----- BANNER DE HORÁRIO (areia) ----- */
+.horario-banner {
+    background: #fef3e0;
+    border-left: 6px solid #f59e0b;
+    padding: 18px 30px;
+    border-radius: 20px;
+    margin: 30px auto 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    justify-content: center;
+    max-width: 900px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+.horario-banner i {
+    font-size: 1.8rem;
+    color: #e67e22;
+}
+
+.horario-banner p {
+    font-size: 1rem;
+    color: #2d4052;
+    margin: 0;
+}
+
+.horario-banner strong {
+    color: #1e2b3a;
+}
+
+.horario-banner .redes-mini {
+    display: flex;
+    gap: 12px;
+    margin-left: auto;
+}
+
+.horario-banner .redes-mini a {
+    background: #fffcf5;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #1e2b3a;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: background 0.2s;
+}
+
+.horario-banner .redes-mini a:hover {
+    background: #f5ede0;
+}
+
+/* ----- FOOTER (azul claro) ----- */
+footer {
+    background: #4ba3c7;
+    color: #fff6e0;
+    padding: 40px 0 28px;
+    margin-top: 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.footer-content a {
+    color: #fcd34d;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+/* ----- RESPONSIVO ----- */
+@media (max-width: 992px) {
+    .contato-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+    }
+
+    .gallery-card {
+        flex-basis: 82vw;
+    }
+
+    .gallery-card img {
+        height: 220px;
+    }
+
+    .gallery-modal {
+        padding: 12px;
+    }
+
+    .gallery-modal-content {
+        width: 100%;
+    }
+
+    .gallery-modal-content img {
+        max-height: 86vh;
+    }
+
+    .gallery-modal-close {
+        top: 8px;
+        right: 8px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #4ba3c7;
+        padding: 20px 0;
+        gap: 16px;
+        align-items: center;
+        border-top: 1px solid #7ec8e3;
+        margin-top: 16px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .whatsapp-header {
+        margin-left: auto;
+        margin-right: 12px;
+    }
+
+    .hero-content {
+        padding: 30px 20px;
+        border-radius: 32px;
+    }
+
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.9rem;
+    }
+
+    .rotas-list span {
+        padding: 6px 18px;
+        font-size: 1rem;
+    }
+
+    .horario-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .horario-banner .redes-mini {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .btn {
+        padding: 12px 28px;
+        font-size: 1rem;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+}
