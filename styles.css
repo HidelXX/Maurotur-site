@@ -1,4 +1,6 @@
-/* ----- RESET & BASE ----- */
+/* =========================================
+   RESET & BASE
+========================================= */
 
 * {
     margin: 0;
@@ -11,6 +13,7 @@ body {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -30,6 +33,12 @@ a {
     color: inherit;
 }
 
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -38,16 +47,27 @@ a {
 }
 
 
-/* ----- HEADER ----- */
+/* =========================================
+   HEADER
+========================================= */
 
 header {
-    background: linear-gradient(135deg, #7ec8e3 0%, #4ba3c7 100%);
+    background: linear-gradient(
+        135deg,
+        #7ec8e3 0%,
+        #4ba3c7 100%
+    );
+
     color: #fff;
     padding: 18px 0;
+
     position: sticky;
     top: 0;
+
     z-index: 100;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.10);
 }
 
 .header-content {
@@ -63,7 +83,9 @@ header {
     font-weight: 700;
     letter-spacing: -0.5px;
     color: #fff;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.10);
 }
 
 .logo h1 span {
@@ -97,14 +119,23 @@ header {
 
 .whatsapp-header {
     background: #25d366;
+
     padding: 8px 18px;
+
     border-radius: 30px;
+
     font-weight: 600;
     font-size: 0.9rem;
+
     display: flex;
     align-items: center;
+
     gap: 8px;
-    transition: background 0.2s, transform 0.2s;
+
+    transition:
+        background 0.2s,
+        transform 0.2s;
+
     color: #fff;
 }
 
@@ -119,37 +150,52 @@ header {
 
 .menu-toggle {
     display: none;
+
     font-size: 1.8rem;
+
     cursor: pointer;
+
     background: none;
     border: none;
+
     color: #fff;
 }
 
 
-/* ----- HERO ----- */
+/* =========================================
+   HERO
+========================================= */
 
 .hero {
     position: relative;
+
     width: 100%;
     max-width: 100%;
+
     min-height: 650px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     overflow: hidden;
+
     isolation: isolate;
-    background: #04e2ffcc;
+
+    background: #04e2ff;
 }
 
 .hero-background {
     position: absolute;
     inset: 0;
+
     width: 100%;
     height: 100%;
+
     z-index: 0;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
@@ -159,21 +205,28 @@ header {
 .hero-background img {
     width: 100%;
     height: 100%;
+
     max-width: 100%;
-    object-fit: contain;
+
+    object-fit: cover;
+
     object-position: center center;
+
     display: block;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
+
     background: rgba(0, 0, 0, 0.40);
+
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
+
     z-index: 2;
 
     width: 100%;
@@ -188,25 +241,59 @@ header {
     text-align: center;
 }
 
+.hero-content h2 {
+    margin-bottom: 15px;
+}
 
-/* ----- BOTÕES ----- */
+.titulo-hero {
+    font-size: 2.8rem;
+}
+
+.titulo-hero span {
+    color: #f59e0b;
+}
+
+.hero-content h3 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.hero-content p {
+    margin-bottom: 14px;
+}
+
+
+/* =========================================
+   BOTÕES
+========================================= */
 
 .hero-buttons {
     display: flex;
+
     flex-wrap: wrap;
+
     justify-content: center;
+
     gap: 16px;
+
     margin-top: 25px;
 }
 
 .btn {
     display: inline-block;
+
     padding: 14px 40px;
+
     border-radius: 50px;
+
     font-weight: 600;
+
     font-size: 1.1rem;
+
     transition: all 0.25s;
+
     border: none;
+
     cursor: pointer;
 }
 
@@ -217,37 +304,52 @@ header {
 
 .btn-primary:hover {
     background: #d97706;
+
     transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(245, 158, 11, 0.35);
+
+    box-shadow:
+        0 12px 28px rgba(245, 158, 11, 0.35);
 }
 
 .btn-outline {
     background: rgba(255, 255, 255, 0.25);
-    color: #1e2b3a;
+
+    color: #fff;
+
     border: 2px solid #f59e0b;
+
     backdrop-filter: blur(2px);
 }
 
 .btn-outline:hover {
     background: rgba(245, 158, 11, 0.15);
+
     transform: translateY(-3px);
+
     border-color: #d97706;
 }
 
 
-/* ----- SEÇÕES ----- */
+/* =========================================
+   SEÇÕES
+========================================= */
 
 .section {
     width: 100%;
     max-width: 100%;
+
     padding: 70px 0;
 }
 
 .section-title {
     text-align: center;
+
     font-size: 2.4rem;
+
     font-weight: 700;
+
     margin-bottom: 14px;
+
     color: #1e2b3a;
 }
 
@@ -257,77 +359,123 @@ header {
 
 .section-sub {
     text-align: center;
+
     font-size: 1.1rem;
+
     color: #5a6f7e;
+
     max-width: 650px;
+
     margin: 0 auto 48px;
 }
 
 
-/* ----- GALERIA ----- */
+/* =========================================
+   GALERIA
+========================================= */
 
 .gallery-section {
-    background: linear-gradient(135deg, #fdf7eb 0%, #f5ede0 100%);
+    background:
+        linear-gradient(
+            135deg,
+            #fdf7eb 0%,
+            #f5ede0 100%
+        );
 }
 
 .gallery-controls {
     display: flex;
+
     justify-content: center;
+
     gap: 12px;
+
     margin-bottom: 24px;
 }
 
 .gallery-btn {
     border: none;
+
     width: 46px;
     height: 46px;
+
     flex-shrink: 0;
+
     border-radius: 50%;
+
     background: #4ba3c7;
+
     color: #fff;
+
     font-size: 1rem;
+
     cursor: pointer;
-    transition: transform 0.2s, background 0.2s;
+
+    transition:
+        transform 0.2s,
+        background 0.2s;
 }
 
 .gallery-btn:hover {
     background: #e67e22;
+
     transform: translateY(-2px);
 }
 
 .gallery-viewport {
     width: 100%;
     max-width: 100%;
+
     overflow: hidden;
+
     padding: 8px 0;
 }
 
 .gallery-track {
     display: flex;
+
     gap: 24px;
+
     width: max-content;
-    transition: transform 0.7s ease;
+
+    transition:
+        transform 0.7s ease;
+
     will-change: transform;
 }
 
 .gallery-card {
     flex: 0 0 320px;
+
     max-width: 85vw;
+
     background: #fffdf8;
+
     padding: 12px;
+
     border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.06);
+
     border: 1px solid #efe3cf;
 }
 
 .gallery-card img {
     width: 100%;
+
     height: 270px;
+
     object-fit: cover;
+
     border-radius: 16px;
+
     display: block;
+
     cursor: zoom-in;
-    transition: transform 0.2s ease;
+
+    transition:
+        transform 0.2s ease;
 }
 
 .gallery-card img:hover {
@@ -340,20 +488,34 @@ header {
 }
 
 
-/* ----- MODAL ----- */
+/* =========================================
+   MODAL
+========================================= */
 
 .gallery-modal {
     position: fixed;
+
     inset: 0;
+
     background: rgba(12, 18, 24, 0.92);
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     padding: 20px;
+
     z-index: 220;
+
     opacity: 0;
+
     visibility: hidden;
-    transition: opacity 0.25s ease, visibility 0.25s ease;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
 }
 
 .gallery-modal.is-open {
@@ -363,93 +525,144 @@ header {
 
 .gallery-modal-content {
     position: relative;
+
     width: min(96vw, 900px);
+
     max-width: 100%;
+
     max-height: 92vh;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 }
 
 .gallery-modal-content img {
     width: 100%;
+
     max-width: 100%;
+
     max-height: 92vh;
+
     object-fit: contain;
+
     border-radius: 22px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+
     transform: scale(0.95);
-    transition: transform 0.25s ease;
+
+    transition:
+        transform 0.25s ease;
 }
 
-.gallery-modal.is-open .gallery-modal-content img {
+.gallery-modal.is-open
+.gallery-modal-content img {
     transform: scale(1);
 }
 
 .gallery-modal-close {
     position: absolute;
+
     top: 16px;
     right: 16px;
+
     z-index: 230;
+
     width: 48px;
     height: 48px;
+
     border: none;
+
     border-radius: 50%;
+
     background: rgba(255, 255, 255, 0.95);
+
     color: #1e2b3a;
+
     font-size: 1.2rem;
+
     cursor: pointer;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
 .gallery-modal-close:hover {
     background: #fff;
+
     transform: scale(1.03);
 }
 
 
-/* ----- CARDS ----- */
+/* =========================================
+   CARDS
+========================================= */
 
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+
     gap: 30px;
 }
 
 .card {
     background: #fffcf5;
+
     padding: 32px 20px;
+
     border-radius: 28px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.05);
+
     text-align: center;
-    transition: transform 0.25s, box-shadow 0.25s;
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+
     border: 1px solid #f0e8d8;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+
+    box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.08);
 }
 
 .card i {
     font-size: 2.8rem;
+
     color: #4ba3c7;
+
     margin-bottom: 16px;
 }
 
 .card h3 {
     font-size: 1.3rem;
+
     margin-bottom: 10px;
+
     color: #1e2b3a;
 }
 
 .card p {
     color: #5a6f7e;
+
     font-size: 0.98rem;
 }
 
 
-/* ----- ROTAS ----- */
+/* =========================================
+   ROTAS
+========================================= */
 
 .rotas-bg {
     background: #f5ede0;
@@ -457,57 +670,140 @@ header {
 
 .rotas-list {
     display: flex;
+
     flex-wrap: wrap;
+
     justify-content: center;
+
     gap: 20px 40px;
+
     font-size: 1.2rem;
+
     font-weight: 500;
+
     color: #1e2b3a;
+
     margin-top: 10px;
 }
 
 .rotas-list span {
     background: #fffcf5;
+
     padding: 10px 28px;
+
     border-radius: 50px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+
+    box-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.04);
+
     border: 1px solid #e2d6c0;
 }
 
 .rotas-list i {
     margin-right: 8px;
+
     color: #e67e22;
 }
 
 
-/* ----- CONTATO ----- */
+/* =========================================
+   VÍDEO
+========================================= */
+
+.media-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+.media-card {
+    background: #fffcf5;
+
+    padding: 28px;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.05);
+
+    border: 1px solid #f0e8d8;
+}
+
+.media-card h3 {
+    color: #1e2b3a;
+
+    margin-bottom: 20px;
+
+    font-size: 1.3rem;
+}
+
+.media-card h3 i {
+    color: #4ba3c7;
+
+    margin-right: 8px;
+}
+
+.media-card video {
+    width: 100%;
+
+    max-height: 600px;
+
+    border-radius: 18px;
+
+    display: block;
+
+    background: #000;
+}
+
+
+/* =========================================
+   CONTATO
+========================================= */
 
 .contato-grid {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 50px;
+
     margin-top: 20px;
 }
 
 .contato-info h3 {
     font-size: 1.6rem;
+
     color: #1e2b3a;
+
     margin-bottom: 16px;
 }
 
 .contato-info p {
     color: #3e5566;
+
     margin-bottom: 12px;
+
     display: flex;
+
     align-items: center;
+
     gap: 12px;
+
     font-size: 1.05rem;
 }
 
 .contato-info i {
     width: 30px;
+
     color: #4ba3c7;
+
     font-size: 1.3rem;
+
+    flex-shrink: 0;
 }
 
 .icon-blue {
@@ -524,27 +820,41 @@ header {
 
 .contato-info .phone {
     font-weight: 600;
+
     font-size: 1.2rem;
+
     color: #1e2b3a;
 }
 
 .social-links {
     margin-top: 24px;
+
     display: flex;
+
     gap: 18px;
 }
 
 .social-links a {
     background: #4ba3c7;
+
     color: #fff;
+
     width: 50px;
     height: 50px;
+
     border-radius: 50%;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     font-size: 1.6rem;
-    transition: background 0.2s, transform 0.2s;
+
+    transition:
+        background 0.2s,
+        transform 0.2s;
 }
 
 .social-links a i {
@@ -553,105 +863,154 @@ header {
 
 .social-links a:hover {
     background: #e67e22;
+
     transform: scale(1.05);
 }
 
 .contato-form {
     background: #fffcf5;
+
     padding: 32px 28px;
+
     border-radius: 28px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.05);
+
     border: 1px solid #f0e8d8;
 }
 
 .contato-form h4 {
     font-size: 1.3rem;
+
     margin-bottom: 18px;
+
     color: #1e2b3a;
 }
 
 .contato-form input,
 .contato-form textarea {
     width: 100%;
+
     max-width: 100%;
+
     padding: 14px 18px;
+
     border: 1px solid #e2d6c0;
+
     border-radius: 16px;
+
     font-size: 1rem;
+
     margin-bottom: 16px;
-    transition: border 0.2s;
+
+    transition:
+        border 0.2s;
+
     background: #fefcf8;
+
     font-family: inherit;
 }
 
 .contato-form input:focus,
 .contato-form textarea:focus {
     outline: none;
+
     border-color: #4ba3c7;
-    box-shadow: 0 0 0 3px rgba(75, 163, 199, 0.15);
+
+    box-shadow:
+        0 0 0 3px rgba(75, 163, 199, 0.15);
 }
 
 .contato-form textarea {
     height: 110px;
+
     resize: vertical;
 }
 
 .contato-form button {
     background: #f59e0b;
+
     color: #1e2b3a;
+
     border: none;
+
     padding: 14px;
+
     border-radius: 50px;
+
     font-weight: 600;
+
     font-size: 1.1rem;
+
     width: 100%;
+
     cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
+
+    transition:
+        background 0.2s,
+        transform 0.2s;
 }
 
 .contato-form button:hover {
     background: #d97706;
-    transform: scale(1.01);
-}
 
-.contato-form button.is-sent {
-    background: #25d366;
-    color: #fff;
+    transform: scale(1.01);
 }
 
 .form-security-note {
     margin-top: 12px;
+
     font-size: 0.85rem;
+
     color: #6f8a9a;
+
     text-align: center;
 }
 
 
-/* ----- BANNER DE HORÁRIO ----- */
+/* =========================================
+   BANNER
+========================================= */
 
 .horario-banner {
     background: #fef3e0;
+
     border-left: 6px solid #f59e0b;
+
     padding: 18px 30px;
+
     border-radius: 20px;
+
     margin: 30px auto 0;
+
     display: flex;
+
     align-items: center;
+
     flex-wrap: wrap;
+
     gap: 12px 24px;
+
     justify-content: center;
+
     max-width: 900px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.02);
 }
 
 .horario-banner i {
     font-size: 1.8rem;
+
     color: #e67e22;
 }
 
 .horario-banner p {
     font-size: 1rem;
+
     color: #2d4052;
+
     margin: 0;
 }
 
@@ -659,50 +1018,36 @@ header {
     color: #1e2b3a;
 }
 
-.horario-banner .redes-mini {
-    display: flex;
-    gap: 12px;
-    margin-left: auto;
-}
 
-.horario-banner .redes-mini a {
-    background: #fffcf5;
-    padding: 6px 14px;
-    border-radius: 30px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #1e2b3a;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    transition: background 0.2s;
-}
-
-.horario-banner .redes-mini a:hover {
-    background: #f5ede0;
-}
-
-
-/* ----- FOOTER ----- */
+/* =========================================
+   FOOTER
+========================================= */
 
 footer {
     background: #4ba3c7;
+
     color: #fff6e0;
+
     padding: 40px 0 28px;
+
     margin-top: 20px;
 }
 
 .footer-content {
     display: flex;
+
     flex-wrap: wrap;
+
     justify-content: space-between;
+
     align-items: center;
+
     gap: 20px;
 }
 
 .footer-content p {
     margin: 0;
+
     font-size: 0.95rem;
 }
 
@@ -715,18 +1060,24 @@ footer {
 }
 
 
-/* =========================================================
-   RESPONSIVO
-   ========================================================= */
+/* =========================================
+   TABLETS
+========================================= */
 
 @media (max-width: 992px) {
 
     .contato-grid {
         grid-template-columns: 1fr;
+
         gap: 30px;
     }
+
 }
 
+
+/* =========================================
+   CELULARES
+========================================= */
 
 @media (max-width: 768px) {
 
@@ -737,30 +1088,42 @@ footer {
         overflow-x: hidden;
     }
 
+
     .container {
         width: 100%;
         max-width: 100%;
+
         padding-left: 16px;
         padding-right: 16px;
     }
+
 
     /* HEADER */
 
     .header-content {
         width: 100%;
+
         flex-wrap: wrap;
     }
 
     .nav-links {
         display: none;
+
         flex-direction: column;
+
         width: 100%;
         max-width: 100%;
+
         background: #4ba3c7;
+
         padding: 20px 0;
+
         gap: 16px;
+
         align-items: center;
+
         border-top: 1px solid #3984a0;
+
         margin-top: 16px;
     }
 
@@ -774,6 +1137,7 @@ footer {
 
     .whatsapp-header {
         margin-left: auto;
+
         margin-right: 12px;
     }
 
@@ -783,57 +1147,97 @@ footer {
     .hero {
         width: 100%;
         max-width: 100%;
+
         min-height: 700px;
+
         align-items: center;
+
         overflow: hidden;
     }
 
     .hero-background {
         width: 100%;
-        max-width: 100%;
+        height: 100%;
+
         overflow: hidden;
     }
 
     .hero-background img {
         width: 100%;
         height: 100%;
+
         max-width: 100%;
+
         object-fit: cover;
-        object-position: center 40%;
+
+        object-position: center center;
     }
 
     .hero-overlay {
-        background: rgba(0, 0, 0, 0.52);
+        background:
+            rgba(0, 0, 0, 0.52);
     }
 
     .hero-content {
         width: 100%;
-        max-width: 100%;
+
+        max-width: 600px;
+
         padding: 45px 20px;
+
         text-align: center;
     }
 
+    .titulo-hero {
+        font-size: 2rem;
+    }
+
     .hero-content h2 {
-        font-size: 2.2rem;
-        line-height: 1.2;
+        font-size: 1.8rem;
+
+        line-height: 1.25;
+
         margin-bottom: 15px;
     }
 
-    .hero-content p {
-        font-size: 1rem;
-        line-height: 1.6;
+    .hero-content h3 {
+        font-size: 1.15rem;
+
+        margin-top: 20px;
+
+        margin-bottom: 8px;
     }
 
+    .hero-content p {
+        font-size: 0.98rem;
+
+        line-height: 1.6;
+
+        margin-bottom: 14px;
+    }
+
+
+    /* BOTÕES */
+
     .hero-buttons {
+        width: 100%;
+
+        display: flex;
+
         flex-direction: column;
-        align-items: stretch;
+
+        align-items: center;
+
         gap: 12px;
+
         margin-top: 25px;
     }
 
     .hero-buttons .btn {
         width: 100%;
-        max-width: 100%;
+
+        max-width: 350px;
+
         text-align: center;
     }
 
@@ -842,17 +1246,21 @@ footer {
 
     .gallery-card {
         flex: 0 0 82vw;
+
         max-width: 82vw;
     }
 
     .gallery-card img {
         height: 220px;
+
         max-width: 100%;
     }
 
     .gallery-viewport {
         width: 100%;
+
         max-width: 100%;
+
         overflow: hidden;
     }
 
@@ -860,31 +1268,45 @@ footer {
         width: max-content;
     }
 
+
+    /* MODAL */
+
     .gallery-modal {
         width: 100%;
+
         max-width: 100%;
+
         padding: 12px;
     }
 
     .gallery-modal-content {
         width: 100%;
+
         max-width: 100%;
     }
 
     .gallery-modal-content img {
         max-height: 86vh;
+
         max-width: 100%;
     }
 
     .gallery-modal-close {
         top: 8px;
+
         right: 8px;
+
         width: 44px;
+
         height: 44px;
     }
 
 
     /* SEÇÕES */
+
+    .section {
+        padding: 55px 0;
+    }
 
     .section-title {
         font-size: 1.9rem;
@@ -892,6 +1314,7 @@ footer {
 
     .section-sub {
         font-size: 1rem;
+
         padding: 0 10px;
     }
 
@@ -900,27 +1323,18 @@ footer {
 
     .rotas-list {
         width: 100%;
+
         max-width: 100%;
+
+        gap: 12px;
     }
 
     .rotas-list span {
         max-width: 100%;
-        padding: 6px 18px;
+
+        padding: 8px 18px;
+
         font-size: 1rem;
-    }
-
-
-    /* HORÁRIO */
-
-    .horario-banner {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-        max-width: 100%;
-    }
-
-    .horario-banner .redes-mini {
-        margin-left: 0;
     }
 
 
@@ -928,149 +1342,72 @@ footer {
 
     .contato-grid {
         width: 100%;
+
         max-width: 100%;
     }
 
     .contato-form {
         width: 100%;
+
         max-width: 100%;
+
         padding: 28px 20px;
     }
+
+
+    /* VÍDEO */
+
+    .media-card {
+        padding: 20px;
+    }
+
 }
 
 
-/* ----- CELULARES PEQUENOS ----- */
-
-@media (max-width: 768px) {
-
-    .hero {
-        min-height: 700px;
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .hero-background {
-        position: absolute;
-        inset: 0;
-
-        width: 100%;
-        height: 100%;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        overflow: hidden;
-    }
-
-    .hero-background img {
-        /*
-         * Mantém a proporção da foto.
-         * Não corta as laterais nem o topo/baixo.
-         */
-        width: 100%;
-        height: auto;
-
-        max-width: 100%;
-        max-height: 100%;
-
-        object-fit: contain;
-        object-position: center center;
-    }
-
-    .hero-overlay {
-        background: rgba(0, 0, 0, 0.5);
-    }
-
-    .hero-content {
-        width: 100%;
-        max-width: 600px;
-
-        padding: 45px 20px;
-
-        margin: 0 auto;
-
-        text-align: center;
-    }
-
-    .hero-content h2 {
-        font-size: 1.8rem;
-        line-height: 1.25;
-        margin-bottom: 15px;
-        text-align: center;
-    }
-
-    .hero-content h3 {
-        font-size: 1.15rem;
-        margin-top: 20px;
-        margin-bottom: 8px;
-        text-align: center;
-    }
-
-    .hero-content p {
-        max-width: 100%;
-        font-size: 0.98rem;
-        line-height: 1.6;
-        margin: 0 auto 14px;
-        text-align: center;
-    }
-
-    .hero-buttons {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
-        margin-top: 25px;
-    }
-
-    .hero-buttons .btn {
-        width: 100%;
-        max-width: 350px;
-        text-align: center;
-    }
-}
-
-
-/* ===== CELULARES PEQUENOS ===== */
+/* =========================================
+   CELULARES PEQUENOS
+========================================= */
 
 @media (max-width: 480px) {
 
     .hero {
-        min-height: 750px;
+        min-height: 760px;
+
         width: 100%;
+
         max-width: 100%;
+
         overflow: hidden;
     }
 
     .hero-background {
         width: 100%;
+
         height: 100%;
+
         overflow: hidden;
     }
 
     .hero-background img {
         width: 100%;
-        height: auto;
 
-        max-width: 100%;
-        max-height: 100%;
+        height: 100%;
 
-        object-fit: contain;
+        max-width: none;
+
+        object-fit: cover;
+
         object-position: center center;
     }
 
     .hero-overlay {
-        background: rgba(15, 236, 252, 0.404);
+        background:
+            rgba(0, 0, 0, 0.50);
     }
 
     .hero-content {
         width: 100%;
+
         max-width: 100%;
 
         padding: 35px 16px;
@@ -1079,8 +1416,11 @@ footer {
 
         text-align: center;
     }
+
     .titulo-hero {
-        color: #b3811d;
+        color: #fcd34d;
+
+        font-size: 1.55rem;
     }
 
     .titulo-hero span {
@@ -1089,23 +1429,114 @@ footer {
 
     .hero-content h2 {
         font-size: 1.55rem;
+
         line-height: 1.25;
+
         text-align: center;
     }
 
     .hero-content h3 {
         font-size: 1.05rem;
+
         text-align: center;
     }
 
     .hero-content p {
         font-size: 0.92rem;
+
         line-height: 1.5;
+
         text-align: center;
     }
 
     .hero-buttons .btn {
         width: 100%;
+
         max-width: 320px;
+    }
+
+
+    .gallery-card {
+        flex: 0 0 86vw;
+
+        max-width: 86vw;
+    }
+
+    .gallery-card img {
+        height: 210px;
+    }
+
+
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+
+    .contato-info p {
+        font-size: 0.95rem;
+    }
+
+
+    .contato-info .phone {
+        font-size: 1.05rem;
+    }
+
+
+    .footer-content {
+        text-align: center;
+
+        justify-content: center;
+    }
+
+}
+/* ===== GALERIA DE VÍDEOS ===== */
+
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    width: 100%;
+}
+
+.video-card {
+    width: 100%;
+    background: #fffcf5;
+    padding: 12px;
+    border-radius: 24px;
+    border: 1px solid #f0e8d8;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.video-card video {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 16px;
+    background: #000;
+}
+
+/* ===== VÍDEOS NO CELULAR ===== */
+
+@media (max-width: 768px) {
+
+    .video-gallery {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .video-card {
+        width: 100%;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .video-card video {
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        object-fit: contain;
+        border-radius: 14px;
     }
 }
