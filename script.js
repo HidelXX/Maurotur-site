@@ -328,6 +328,7 @@ const galleryModalImage = document.getElementById('galleryModalImage');
 const galleryModalClose = document.getElementById('galleryModalClose');
 
 const galleryImages = document.querySelectorAll('.gallery-image');
+const galleryVideos = document.querySelectorAll('.gallery-track video');
 
 let currentIndex = 0;
 let isPlaying = true;
@@ -499,6 +500,10 @@ if (
     updateGallery();
     startAutoPlay();
 }
+
+galleryVideos.forEach(video => {
+    video.addEventListener('play', pauseAutoPlay);
+});
 
 
 // ===============================
